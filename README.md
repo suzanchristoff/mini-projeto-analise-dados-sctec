@@ -24,12 +24,12 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 ├── historia_vendas.py                       # script em python com as análises
 ├── funcoes.py                               # função auxiliar calcular_receita()
 ├── tabela_vendas_ZePequeno_limpa.csv        # dados de vendas (já tratados)
-└── tabela_vendas_ZePequeno_original.xlsx    # dados de vendas (já tratados)
+└── tabela_vendas_ZePequeno_original.xlsx    # dados de vendas brutos(sem tratamento)
 ```
 
 ---
 
-## 📋 Sobre os dados
+## Sobre os dados
 
 | Coluna        | Descrição                                      |
 |---------------|------------------------------------------------|
@@ -43,7 +43,7 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 
 ---
 
-## ⚙️ Como o script funciona
+## Como o script funciona
 
 1. **Leitura:** carrega o CSV com `pandas`.
 2. **Tratamento da data:** converte a coluna `Data` para `datetime`, usando `dayfirst=True` porque o formato brasileiro é dia/mês/ano.
