@@ -10,16 +10,16 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 
 1. Quantas vendas foram registradas no período analisado?
 2. Qual foi a receita total e o valor médio por venda (ticket médio)?
-3. Quanto cada um dos produtos vendidos representa na receita?
-4. Por qual canal (E-commerce ou Loja Física) as vendas acontecem e qual a participação de cada um?
-5. Quantas vendas podem ser classificadas como "muito boas"?
-6. Quais regiões são atendidas, quais geram mais receita e onde estão as melhores vendas?
+3. Qual dos produtos vendidos tem a maior participação na receita?
+4. Por quais canais as vendas foram realizadas e qual a participação de cada um?
+5. Quantas são as vendas classificadas como "muito boas"?
+6. Quantas e quais são as regiões atendidas, quais geram mais receita e onde estão as melhores vendas?
 
 ---
 
 ## Fonte de dados
 
-Os dados foram obtidos a partir da tabela de vendas "tabela_vendas_ZePequeno_original.xlsx" a qual continha 763 registros ao todo.
+Os dados foram obtidos a partir da tabela de vendas `tabela_vendas_ZePequeno_original.xlsx` a qual continha 763 registros ao todo.
 
 ---
 
@@ -37,7 +37,7 @@ Os dados foram obtidos a partir da tabela de vendas "tabela_vendas_ZePequeno_ori
 
 ---
 
-## Tecnologias usadas
+## Ferramentas e tecnologias utilizadas
 
 - Visual Studio Code
 - Python
@@ -76,16 +76,16 @@ As vendas foram classificadas em três faixas, de acordo com o valor de cada uma
 - Número total de regiões atendidas: 11
 
  - Nomes das regiões/cidades atendidas:
-Joinville
-Blumenau
-Florianópolis
-Sudeste
-Nordeste
-Sul
-Norte
-Rio de Janeiro
-São Paulo
-Centro-Oeste
+Joinville,
+Blumenau,
+Florianópolis,
+Sudeste,
+Nordeste,
+Sul,
+Norte,
+Rio de Janeiro,
+São Paulo,
+Centro-Oeste,
 Curitiba
 
 - E as três com maiores receitas foram:
@@ -105,18 +105,10 @@ Sudeste            1
 
 ---
 
-## Principais métricas
-
-- Número de registros
-- Receita total 
-- Ticket médio
-
----
-
 ## Estrutura do repositório
 
 ```
-├── historia_vendas.py                       # script em python com as análises
+├── analise_vendas.py                       # script em python com as análises
 ├── funcoes.py                               # função auxiliar calcular_receita()
 ├── tabela_vendas_ZePequeno_limpa.csv        # dados de vendas (já tratados)
 └── tabela_vendas_ZePequeno_original.xlsx    # dados de vendas brutos(sem tratamento)
