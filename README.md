@@ -61,7 +61,7 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 
 ---
 
-## ▶️ Como executar
+## ▶Como executar
 
 1. Instale o Python 3.12 ou superior e o pandas:
 ```bash
