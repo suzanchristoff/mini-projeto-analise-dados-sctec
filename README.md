@@ -4,10 +4,9 @@ Mini projeto de análise de dados em Python com pandas.
 
 A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplifica a **economia circular**: ela produz paçoca de amendoim e reaproveita a casca do amendoim para fabricar rolhas.
 
-
 ---
 
-## Perguntas respondidas
+## Perguntas de negócio
 
 1. Quantas vendas foram registradas no período analisado?
 2. Qual foi a receita total e o valor médio por venda (ticket médio)?
@@ -18,18 +17,13 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 
 ---
 
-## Estrutura do projeto
+## Fonte de dados
 
-```
-├── historia_vendas.py                       # script em python com as análises
-├── funcoes.py                               # função auxiliar calcular_receita()
-├── tabela_vendas_ZePequeno_limpa.csv        # dados de vendas (já tratados)
-└── tabela_vendas_ZePequeno_original.xlsx    # dados de vendas brutos(sem tratamento)
-```
+Os dados foram obtidos a partir da tabela de vendas "tabela_vendas_ZePequeno_original.xlsx" a qual continha 763 registros ao todo.
 
 ---
 
-## Sobre os dados
+## Dicionário de dados
 
 | Coluna        | Descrição                                      |
 |---------------|------------------------------------------------|
@@ -43,13 +37,17 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 
 ---
 
-## Como o script funciona
+## Tecnologias usadas
 
-1. **Leitura:** carrega o CSV com `pandas`.
-2. **Tratamento da data:** converte a coluna `Data` para `datetime`, usando `dayfirst=True` porque o formato brasileiro é dia/mês/ano.
-3. **Métricas gerais:** período, número de registros, receita total e ticket médio.
-4. **Receita por produto e por canal:** usa a função `calcular_receita()` com filtros opcionais (`produto=` e `canal=`) e calcula a participação de cada um no total.
-5. **Classificação das vendas:** cada venda recebe um rótulo conforme o valor:
+- Visual Studio Code
+- Python
+- Pandas
+
+---
+
+## Critério utilizado para a classificação e identificação das melhores vendas
+
+As vendas foram classificadas em três faixas, de acordo com o valor de cada uma (`Valor_Venda`). Os valores de corte foram definidos após analisar a distribuição dos dados com o método `.describe()` do pandas, que mostra média, mediana, quartis, mínimo e máximo.
 
    | Classificação | Regra                    |
    |---------------|--------------------------|
@@ -57,11 +55,75 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
    | Médio         | valor acima de R$ 2.000  |
    | Baixo         | demais casos             |
 
-6. **Análise por região:** lista as regiões atendidas, o top 3 em receita e a distribuição das vendas "muito boas".
+---
+
+## Resultados e conclusões
+
+- No perído analisado foram contabilizados 763 registros de vendas
+- A receita total foi de R$5,050,930.50
+- O valor médio por venda foi R$6,619.83
+- Os produtos comercializados pela empresa são: ['Paçoca' 'Rolhas']
+- A receita de paçoca foi de R$3,839,682.40 e representa 76.02% do total
+- Já a receita de rolhas foi de R$1,211,248.10 e representa 23.98% do total
+- A receita de vendas gerada por paçoca representa 3.2 vezes a receita de rolhas
+
+- Os canais que originaram as vendas são: ['E-commerce' 'Loja Física']
+- A receita proveniente do e-commerce foi de R$3,060,238.00 e representa 60.59% do total
+- E a receita das lojas físicas foi de R$1,990,692.50 e representa 39.41% do total
+
+- Foram realizadas 152 vendas muito boas e representam 19.92% do total
+
+- Número total de regiões atendidas: 11
+
+ - Nomes das regiões/cidades atendidas:
+Joinville
+Blumenau
+Florianópolis
+Sudeste
+Nordeste
+Sul
+Norte
+Rio de Janeiro
+São Paulo
+Centro-Oeste
+Curitiba
+
+- E as três com maiores receitas foram:
+Blumenau: R$ 2,427,755.80
+Joinville: R$ 2,010,753.90
+Florianópolis: R$ 539,649.80
+
+- Distribuição das melhores vendas por região:
+Região
+Joinville         71
+Florianópolis     43
+Blumenau          32
+Nordeste           2
+Rio de Janeiro     2
+Centro-Oeste       1
+Sudeste            1
 
 ---
 
-## ▶Como executar
+## Principais métricas
+
+- Número de registros
+- Receita total 
+- Ticket médio
+
+---
+
+## Estrutura do repositório
+
+```
+├── historia_vendas.py                       # script em python com as análises
+├── funcoes.py                               # função auxiliar calcular_receita()
+├── tabela_vendas_ZePequeno_limpa.csv        # dados de vendas (já tratados)
+└── tabela_vendas_ZePequeno_original.xlsx    # dados de vendas brutos(sem tratamento)
+```
+---
+
+## Como executar
 
 1. Instale o Python 3.12 ou superior e o pandas:
 ```bash
@@ -72,11 +134,4 @@ A **Zé Pequeno Paçocas e Rolhas Ltda** é uma empresa fictícia que exemplific
 ```bash
    python analise_vendas.py
 ```
-
----
-
-## Tecnologias usadas
-
-- Python
-- pandas
 
