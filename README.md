@@ -160,7 +160,7 @@ A distribuição das vendas classificadas como muito boas foi a seguinte:
 ```bash
    pip install pandas
 ```
-2. Deixe os quatro arquivos na mesma pasta.
+2. Deixe todos os arquivos na mesma pasta.
 3. Rode o script:
 ```bash
    python analise_vendas.py
